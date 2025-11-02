@@ -38,6 +38,22 @@ public class ClassRoom {
         return leftsum + rightsum + root.data;
     }
 
+    //Approach 1
+    //TC -> O(n)2
+    public static int diameter2(Node root){
+        if(root == null){
+            return 0;
+        }
+        int leftD = diameter2(root.left);
+        int leftHt = height(root.left);
+        int rightD = diameter2(root.right);
+        int rightHt = height(root.right);
+
+        int selfD = leftHt + rightHt + 1;
+        return Math.max(selfD, Math.max(leftD,rightD));
+    }
+
+    
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -46,8 +62,7 @@ public class ClassRoom {
         root.left.right = new Node(5);
         root.right.left = new Node(6);
         root.right.right = new Node(7);
-        System.out.println(sum(root));
+        System.out.println(diameter(root).diam);
         
-
     }
 }

@@ -12,7 +12,8 @@ public class BinaryTreeB {
         }
     }
 
-        static class BinaryTree{
+    //Making a Binary Tree
+    static class BinaryTree{
         static int idx = -1;
         public static Node buildTree(int nodes[]){
             idx++;
@@ -24,6 +25,8 @@ public class BinaryTreeB {
             newNode.right = buildTree(nodes);
             return newNode;
         } 
+
+        //PreOrder Traversal
         public static void preOrder(Node root){
             if(root == null){
                 return;
@@ -33,6 +36,7 @@ public class BinaryTreeB {
             preOrder(root.right);
         }
 
+        //InOrder Traversal
         public static void inOrder(Node root){
             if(root == null){
                 return;
@@ -42,6 +46,7 @@ public class BinaryTreeB {
             inOrder(root.right);
         }
 
+        //PostOrder Traversal
         public static void postOrder(Node root){
             if(root == null){
                 return;
